@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>lab 18</title>
+  <meta charset="utf-8">
+  <style>
+      div, img, p {
+          width: 50%;
+          display: inline-block;
+      }
+      div {
+          float: left;
+      }
+  </style>
+</head>
+<body>
+    <h1>NATIONAL GEOGRAPHIC CONTEST</h1>
+    <div>
+        <p onMouseOver="switchero(my_names[1], my_images[1])" onMouseOut="switchero()">First Place Winner</p>
+        <p onMouseOver="switchero(my_names[2], my_images[2])" onMouseOut="switchero()">Third Place Winner</p>
+        <p onMouseOver="switchero(my_names[3], my_images[3])" onMouseOut="switchero()">Merit Place Winner</p><br><br><br>
+        <p id="text_location"></p>
+    </div>
+    <img src="" alt="Image Not Found", height="300px", width="300px">
+<script type="text/javascript">
+
+    // Display initial image and empty string when page loads.
+    window.addEventListener('load', function() {
+        switchero(my_names[0], my_images[0]);
+    });
+
+    // list of names and images
+    let my_names = ['', 'The Independence Day', 'Driver in Magic Kingdom', 'End of the World']
+    let my_images = ["https://upload.wikimedia.org/wikipedia/commons/a/ad/Meadow_Foxtail_head.jpg", "https://c.pxhere.com/photos/29/c7/flower_purple_lical_blosso_beautiful_beauty_bloom_blooming-1328279.jpg!d", "https://c.pxhere.com/photos/a4/b4/marguerite_daisy_beautiful_beauty_bloom_blooming_blossom_blue_background-1328280.jpg!d", "https://c.pxhere.com/photos/1f/69/rose_beautiful_beauty_bloom_blooming_blossom_blue_background_botanical-886484.jpg!d"]
+        
+    // Change the image and name
+    function switchero(name=my_names[0], image=my_images[0]){
+        
+        document.images[0].src=image;
+        document.getElementById('text_location').innerHTML = name;
+    }
+</script>
+</body>
+</html>
